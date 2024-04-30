@@ -5,7 +5,7 @@ function SimData(odeSys, u0, Cons, L, V, K, tspan)
         L 
         V 
         K]
-    prob = ODEProblem(sys, u0, tspan, p, jac = true)
+    prob = ODEProblem(odeSys, u0, tspan, p, jac = true)
     sol = solve(prob)
 
     flux_ss = flux_vector(sol[end], p)
